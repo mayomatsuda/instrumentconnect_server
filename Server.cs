@@ -12,13 +12,12 @@ namespace Server
 
         static void Main(string[] args)
         {
-            string ipString = IPAddress.Any.ToString();
-            TcpListener serverSocket = new TcpListener(IPAddress.Any, 8080);
+            TcpListener serverSocket = new TcpListener(IPAddress.Parse("instrumentconnectserver-icserver.apps.us-east-2.starter.openshift-online.com"), 8080);
             TcpClient clientSocket = default(TcpClient);
             int counter = 0;
 
             serverSocket.Start();
-            Console.WriteLine("Server Started on " + ipString);
+            Console.WriteLine("Server Started");
             while (true)
             {
                 counter += 1;
