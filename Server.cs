@@ -12,13 +12,13 @@ namespace Server
 
         static void Main(string[] args)
         {
-            string externalip = new WebClient().DownloadString("http://icanhazip.com");
-            TcpListener serverSocket = new TcpListener(IPAddress.Parse(externalip), 8080);
+            string ipString = IPAddress.Any.ToString();
+            TcpListener serverSocket = new TcpListener(IPAddress.Any, 8080);
             TcpClient clientSocket = default(TcpClient);
             int counter = 0;
-            
+
             serverSocket.Start();
-            Console.WriteLine("Server Started on " + externalip);
+            Console.WriteLine("Server Started on " + ipString);
             while (true)
             {
                 counter += 1;
