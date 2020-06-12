@@ -12,7 +12,7 @@ namespace Server
 
         static void Main(string[] args)
         {
-            TcpListener serverSocket = new TcpListener(IPAddress.Any, 8080);
+            TcpListener serverSocket = new TcpListener(IPAddress.Any, 80);
             TcpClient clientSocket = default(TcpClient);
             int counter = 0;
 
